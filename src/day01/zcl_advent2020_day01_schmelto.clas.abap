@@ -47,6 +47,8 @@
 
 " In your expense report, what is the product of the three entries that sum to 2020?
 
+" Your puzzle answer was 236430480.
+
 
 CLASS zcl_advent2020_day01_schmelto DEFINITION
   PUBLIC
