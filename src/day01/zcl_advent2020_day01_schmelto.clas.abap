@@ -112,6 +112,7 @@ CLASS zcl_advent2020_day01_schmelto IMPLEMENTATION.
 
   METHOD zif_advent2020_schmelto~solve.
 
+    " to get the result of part 1 -> part1( input )
     output = part2( input ).
 
   ENDMETHOD.
