@@ -17,7 +17,13 @@
   "rename": {
     "output": "renamed",
     "skip": [],
-    "patterns": [{"type": "CLAS|INTF", "oldName": "(.*)_rename", "newName": "$1_foobar"}]
+    "patterns": [
+      {
+        "type": "CLAS|INTF",
+        "oldName": "(.*)_rename",
+        "newName": "$1_schmelto"
+      }
+    ]    
   },
   "syntax": {
     "version": "v740sp08",
@@ -223,7 +229,7 @@
       "ignoreKeywords": []
     },
     "line_break_multiple_parameters": true,
-    "line_break_style": true,
+    "line_break_style": false,
     "line_length": {
       "exclude": [],
       "severity": "Error",
@@ -324,15 +330,7 @@
     "preferred_compare_operator": {
       "exclude": [],
       "severity": "Error",
-      "badOperators": [
-        "EQ",
-        "><",
-        "NE",
-        "GE",
-        "GT",
-        "LT",
-        "LE"
-      ]
+      "badOperators": ["EQ", "><", "NE", "GE", "GT", "LT", "LE"]
     },
     "prefix_is_current_class": {
       "exclude": [],

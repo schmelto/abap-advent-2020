@@ -15,11 +15,29 @@ However, _a lot_ of patience is required to get the ABAP running in Node, this w
 
 After cloning this template repository, please rename all objects, this is done by changing the configuration in `abaplint.json` and then running `npm install && npm run rename`
 
+```json
+"rename": {
+    "output": "renamed",
+    "skip": [],
+    "patterns": [
+      {
+        "type": "CLAS|INTF",
+        "oldName": "(.*)_rename",
+        "newName": "$1_schmelto"
+      }
+    ]    
+  },
+```
+
++ `"line_break_style": false,`
+
 Enable [abaplint.app](https://github.com/marketplace/abaplint) to get nice linter errors.
 
 Adjust `abaplint.json` to match your preferences
 
 ## Commands
+
+-> in GIT Bash
 
 `npm install` to install dependencies, make sure to keep file `package.json` up to date with latest dependencies
 
