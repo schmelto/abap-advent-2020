@@ -83,8 +83,7 @@ CLASS zcl_advent2020_day01_schmelto IMPLEMENTATION.
     LOOP AT strings INTO DATA(string1).
       LOOP AT strings INTO DATA(string2).
         IF string1 + string2 = 2020.
-          DATA(result) = CONV i( string1 * string2 ).
-          output = condense( result ).
+          output = condense( CONV i( string1 * string2 ) ).
           RETURN.
         ENDIF.
       ENDLOOP.
@@ -100,8 +99,7 @@ CLASS zcl_advent2020_day01_schmelto IMPLEMENTATION.
       LOOP AT strings INTO DATA(string2).
         LOOP AT strings INTO DATA(string3).
           IF string1 + string2 + string3 = 2020.
-            DATA(result) = CONV i( string1 * string2 * string3 ).
-            output = condense( result ).
+            output = condense( CONV i( string1 * string2 * string3 ) ).
             RETURN.
           ENDIF.
         ENDLOOP.
