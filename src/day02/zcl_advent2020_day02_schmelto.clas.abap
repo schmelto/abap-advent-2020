@@ -50,6 +50,8 @@
 
 " How many passwords are valid according to the new interpretation of the policies?
 
+" Your puzzle answer was 708.
+
 CLASS zcl_advent2020_day02_schmelto DEFINITION
   PUBLIC
   FINAL
@@ -72,6 +74,11 @@ CLASS zcl_advent2020_day02_schmelto DEFINITION
         !input                   TYPE string
       RETURNING VALUE(passwords) TYPE ty_passwords.
     METHODS part1
+      IMPORTING
+        !input        TYPE string
+      RETURNING
+        VALUE(output) TYPE string .
+    METHODS part2
       IMPORTING
         !input        TYPE string
       RETURNING
@@ -116,9 +123,32 @@ CLASS zcl_advent2020_day02_schmelto IMPLEMENTATION.
 
   ENDMETHOD.
 
+  METHOD part2.
+
+    DATA(lt_passwords) = parse( input ).
+    DATA(lv_valid) = 0.
+
+    LOOP AT lt_passwords INTO DATA(ls_password).
+      DATA(lv_pos1) = ls_password-min - 1.
+      DATA(lv_pos2) = ls_password-max - 1.
+
+      DATA(lv_val1) = ls_password-password+lv_pos1(1).
+      DATA(lv_val2) = ls_password-password+lv_pos2(1).
+
+      IF ( lv_val1 = ls_password-letter AND lv_val2 <> ls_password-letter )
+          OR ( lv_val1 <> ls_password-letter AND lv_val2 = ls_password-letter ).
+        lv_valid = lv_valid + 1.
+      ENDIF.
+    ENDLOOP.
+
+    output = lv_valid.
+    CONDENSE output.
+
+  ENDMETHOD.
+
   METHOD zif_advent2020_schmelto~solve.
 
-    output = part1( input ).
+    output = part2( input ).
 
   ENDMETHOD.
 ENDCLASS.
