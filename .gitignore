@@ -1,4 +1,8 @@
 node_modules
 downport
 output
+
+.vscode/*
+!.vscode/settings.json
+
 # renamed
