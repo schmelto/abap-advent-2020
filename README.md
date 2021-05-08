@@ -1,4 +1,5 @@
 # abap-advent-2020-template
+
 [Advent of Code](https://adventofcode.com) 2020 - ABAP Template
 
 Let's do it the difficult way! By ABAP running on [NodeJS](https://nodejs.org)
@@ -25,11 +26,11 @@ After cloning this template repository, please rename all objects, this is done 
         "oldName": "(.*)_rename",
         "newName": "$1_schmelto"
       }
-    ]    
+    ]
   },
 ```
 
-+ `"line_break_style": false,`
+- `"line_break_style": false,`
 
 Enable [abaplint.app](https://github.com/marketplace/abaplint) to get nice linter errors.
 
